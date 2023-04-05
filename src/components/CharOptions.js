@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import DropDown from "./DropDown";
+import OptionsDropDown from "./OptionsDropDown";
 
 const CharOptions = () => {
-
 
     const races = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Halfling"];
     const classes = ["Barbarian", "Bard", "Cleric", "Druid"]
@@ -13,10 +12,10 @@ const CharOptions = () => {
 
   return (
     <>
-      <DropDown options={races}/>
-      <DropDown options={classes}/>
-      <DropDown options={alignments}/>
-      <DropDown options={background}/>
+      <OptionsDropDown options={races}/>
+      <OptionsDropDown options={classes}/>
+      <OptionsDropDown options={alignments}/>
+      <OptionsDropDown options={background}/>
     </>
   )
 }

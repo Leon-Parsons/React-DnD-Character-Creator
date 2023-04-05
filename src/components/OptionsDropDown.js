@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const DropDown = (props) => {
+const OptionsDropDown = (props) => {
   
   //const displayRandBtn = 
 
@@ -28,4 +28,4 @@ const DropDown = (props) => {
   )
 }
 
-export default DropDown;
+export default OptionsDropDown;
