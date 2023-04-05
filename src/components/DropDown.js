@@ -1,23 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 
 const DropDown = (props) => {
   
   //const displayRandBtn = 
 
-  console.log(
-    props.options.map((option) => {
-      return option.toUpperCase()
-    })
-  );
+  const [chosenVal, setChosenVal] = useState("Meme");
+
+  const handleChange = (event) => {
+    setChosenVal(event.target.value);
+  }
+
+  const randomise = () => {
+    const randomNum = Math.floor(Math.random() * props.options.length + 1);
+    setChosenVal(props.options[randomNum]);
+    console.log(randomNum);
+  }
 
   return (
     <>
-    <select>
+    <select value={chosenVal} onChange={handleChange}>
       {props.options.map((op) => {
       return <option key={op}>{op}</option>})}
     </select>
 
-    <button>Randomize</button>
+    <button onClick={randomise}>Randomize</button>
     </>
   )
 }
