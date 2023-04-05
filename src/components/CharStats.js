@@ -1,15 +1,15 @@
 import React from "react";
+import DropDown from "./DropDown";
 
 const CharStats = () => {
   return (
     <div className = "stats">
-      <select></select>
-      <select></select>
-      <select></select>
-      <select></select>
-      <select></select>
-      <select></select>
-
+      <DropDown></DropDown>
+      <DropDown></DropDown>
+      <DropDown></DropDown>
+      <DropDown></DropDown>
+      <DropDown></DropDown>
+      <DropDown></DropDown>
     </div>
   )
 }

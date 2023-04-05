@@ -1,17 +1,14 @@
 import React from "react";
+import DropDown from "./DropDown";
 
 const CharOptions = () => {
   return (
-    <div className="options">
-      <select></select>
-      <button>rand</button>
-      <select></select>
-      <button>rand</button>
-      <select></select>
-      <button>rand</button>
-      <select></select>
-      <button>rand</button>
-    </div>
+    <>
+      <DropDown></DropDown>
+      <DropDown></DropDown>
+      <DropDown></DropDown>
+      <DropDown></DropDown>
+    </>
   )
 }
 
