@@ -1,8 +1,24 @@
 import React from "react";
 
-const DropDown = () => {
+const DropDown = (props) => {
+  
+  //const displayRandBtn = 
+
+  console.log(
+    props.options.map((option) => {
+      return option.toUpperCase()
+    })
+  );
+
   return (
-    <select></select>
+    <>
+    <select>
+      {props.options.map((op) => {
+      return <option>{op}</option>})}
+    </select>
+
+    <button>Randomize</button>
+    </>
   )
 }
 
