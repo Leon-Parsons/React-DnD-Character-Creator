@@ -14,7 +14,7 @@ const DropDown = (props) => {
     <>
     <select>
       {props.options.map((op) => {
-      return <option>{op}</option>})}
+      return <option key={op}>{op}</option>})}
     </select>
 
     <button>Randomize</button>
