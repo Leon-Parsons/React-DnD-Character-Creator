@@ -6,7 +6,8 @@ const StatsDropDown = (props) => {
 
   const handleChange = (event) => {
     setChosenVal(event.target.value);
-  }
+    console.log(chosenVal);
+  };
 
   return (
     <>
@@ -15,7 +16,7 @@ const StatsDropDown = (props) => {
       return <option key={op}>{op}</option>})}
     </select>
     </>
-  )
+  );
 }
 
 export default StatsDropDown;
