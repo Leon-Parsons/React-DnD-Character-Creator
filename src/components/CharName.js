@@ -11,13 +11,18 @@ const CharName = () => {
     const randomNum1 = Math.floor(Math.random() * firstName.length);
     const randomNum2 = Math.floor(Math.random() * lastName.length);
     setChosenName(firstName[randomNum1] + " " + lastName[randomNum2]); 
+    console.log(chosenName)
   }
 
+  const handleInputChange = (e) => {
+    setChosenName(e.target.value);
+    console.log(chosenName);
+  }
 
   return (
     <div className="name">
       <h4>Enter Name</h4>
-      <input value={chosenName}></input>
+      <input value={chosenName} onChange={handleInputChange}></input>
       <button onClick={randomiseName}>Randomise</button>
     </div>
   )
