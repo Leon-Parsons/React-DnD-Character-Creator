@@ -11,7 +11,6 @@ const CharName = () => {
     const randomNum1 = Math.floor(Math.random() * firstName.length);
     const randomNum2 = Math.floor(Math.random() * lastName.length);
     setChosenName(firstName[randomNum1] + " " + lastName[randomNum2]); 
-    setChosen
   }
 
 
