@@ -1,8 +1,15 @@
-function App() {
+import React from "react";
+import Header from "./components/Header";
+import TitleText from "./components/TitleText"
+import Form from "./components/Form";
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>test</h1>
-    </div>
+    <>
+    {/* <Header />
+    <TitleText /> */}
+    <Form />
+    </>
   );
 }
 
