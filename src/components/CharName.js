@@ -8,7 +8,7 @@ const CharName = ({formData, setFormData}) => {
   const randomiseName = () => {
     const randomNum1 = Math.floor(Math.random() * firstName.length);
     const randomNum2 = Math.floor(Math.random() * lastName.length);
-    setFormData(firstName[randomNum1] + " " + lastName[randomNum2]); 
+    setFormData({...formData, charName: firstName[randomNum1] + " " + lastName[randomNum2]}); 
   }
 
 
