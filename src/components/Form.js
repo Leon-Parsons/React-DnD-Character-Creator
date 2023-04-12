@@ -8,12 +8,25 @@ import TitleText from "./TitleText";
 const Form = () => {
 
     const [section, setSection] = useState(0);
+    const [formData, setFormData] = useState({
+        charName: "",
+        race: "",
+        class: "",
+        alignment: "",
+        background: "",
+        str: 0,
+        dex: 0,
+        con: 0,
+        int: 0,
+        wis: 0,
+        char: 0,
+    });
 
     const formTitle = ["Character Name", "Character Options", "Character Stats", "Confirm Character"];
 
     const sectionDisplay = () => {
         if (section === 0) {
-            return <CharName />
+            return <CharName formData={formData} setFormData={setFormData}/>
         } else if (section === 1) {
             return <CharOptions />
         } else if (section === 2) {
