@@ -1,41 +1,31 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import CharName from "./CharName";
 import CharOptions from "./CharOptions";
 import CharStats from "./CharStats";
 import CharConfirm from "./CharConfirm";
 import TitleText from "./TitleText";
+import { AppContext } from "../App";
 
 const Form = () => {
 
+    const {formData} = useContext(AppContext);
+
     const [section, setSection] = useState(0);
-    const [formData, setFormData] = useState({
-        charName: "",
-        race: "",
-        class: "",
-        alignment: "",
-        background: "",
-        str: 0,
-        dex: 0,
-        con: 0,
-        int: 0,
-        wis: 0,
-        char: 0,
-    });
 
     const formTitle = ["Character Name", "Character Options", "Character Stats", "Confirm Character"];
 
     const sectionDisplay = () => {
         if (section === 0) {
-            return <CharName formData={formData} setFormData={setFormData}/>
+                return <CharName/>
         } else if (section === 1) {
-            return <CharOptions />
+                return <CharOptions/>
         } else if (section === 2) {
-            return <CharStats />
+                return <CharStats />
         }
         else {
-            return <CharConfirm />
+                return <CharConfirm />
         }
-    }
+    };
 
     return (
     <div className="form">
@@ -60,6 +50,6 @@ const Form = () => {
         </div>
     </div>
     );
-}
+};
 
 export default Form;

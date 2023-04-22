@@ -1,6 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { AppContext } from "../App";
 
-const CharName = ({formData, setFormData}) => {
+const CharName = () => {
+
+  const {formData, setFormData} = useContext(AppContext);
 
   const firstName = ["Jorr", "Keela", "Jeroy", "Rishka", "Leer", "Kall", "Jenra", "Yan", "Kurk"];
   const lastName = ["Rorrison", "Gorrax", "Karlo", "Torak", "Raddok", "Yorra"];
@@ -9,6 +12,7 @@ const CharName = ({formData, setFormData}) => {
     const randomNum1 = Math.floor(Math.random() * firstName.length);
     const randomNum2 = Math.floor(Math.random() * lastName.length);
     setFormData({...formData, charName: firstName[randomNum1] + " " + lastName[randomNum2]}); 
+    {console.log(formData.charName)};
   }
 
 

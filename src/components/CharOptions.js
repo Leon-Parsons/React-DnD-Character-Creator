@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import OptionsDropDown from "./OptionsDropDown";
+import { AppContext } from "../App";
 
 const CharOptions = () => {
+    const {formData, setFormData} = useContext(AppContext);
 
     const races = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Halfling"];
     const classes = ["Barbarian", "Bard", "Cleric", "Druid"]
@@ -12,10 +14,10 @@ const CharOptions = () => {
 
   return (
     <>
-      <OptionsDropDown options={races}/>
-      <OptionsDropDown options={classes}/>
-      <OptionsDropDown options={alignments}/>
-      <OptionsDropDown options={background}/>
+      <OptionsDropDown options={races}  setFormData={setFormData} formData={formData} val={"race"}/>
+      <OptionsDropDown options={classes} setFormData={setFormData} formData={formData}/>
+      <OptionsDropDown options={alignments} setFormData={setFormData} formData={formData}/>
+      <OptionsDropDown options={background} setFormData={setFormData} formData={formData}/>
     </>
   )
 }
