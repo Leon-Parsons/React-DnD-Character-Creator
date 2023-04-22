@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import CharName from "./CharName";
 import CharOptions from "./CharOptions";
 import CharStats from "./CharStats";
 import CharConfirm from "./CharConfirm";
 import TitleText from "./TitleText";
+import { AppContext } from "../App";
 
 const Form = () => {
+
+    const {formData} = useContext(AppContext);
 
     const [section, setSection] = useState(0);
 
@@ -13,16 +16,16 @@ const Form = () => {
 
     const sectionDisplay = () => {
         if (section === 0) {
-            return <CharName />
+                return <CharName/>
         } else if (section === 1) {
-            return <CharOptions />
+                return <CharOptions/>
         } else if (section === 2) {
-            return <CharStats />
+                return <CharStats />
         }
         else {
-            return <CharConfirm />
+                return <CharConfirm />
         }
-    }
+    };
 
     return (
     <div className="form">
@@ -47,6 +50,6 @@ const Form = () => {
         </div>
     </div>
     );
-}
+};
 
 export default Form;

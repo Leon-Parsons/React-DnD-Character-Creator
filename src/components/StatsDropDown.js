@@ -1,17 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { AppContext } from "../App";
 
 const StatsDropDown = (props) => {
-  
-  const [chosenVal, setChosenVal] = useState(props.startVal);
+
+  const {formData, setFormData} = useContext(AppContext);
 
   const handleChange = (event) => {
-    setChosenVal(event.target.value);
-    console.log(chosenVal);
   };
 
   return (
     <>
-    <select value={chosenVal} onChange={handleChange}>
+    <select value={props.startVal} onChange={handleChange}>
       {props.options.map((op) => {
       return <option key={op}>{op}</option>})}
     </select>
@@ -20,3 +19,5 @@ const StatsDropDown = (props) => {
 }
 
 export default StatsDropDown;
+
+

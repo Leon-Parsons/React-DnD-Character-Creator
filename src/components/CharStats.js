@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+import { AppContext } from "../App";
 import StatsDropDown from "./StatsDropDown";
 
 
 const CharStats = () => {
+  const {formData, setFormData} = useContext(AppContext);
 
   const statTemplateVals = [15,14,13,12,10,8];
 

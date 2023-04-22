@@ -1,26 +1,27 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { AppContext } from "../App";
 
 const OptionsDropDown = (props) => {
   
   //const displayRandBtn = 
-
-  const [chosenVal, setChosenVal] = useState("Meme");
-
-  const handleChange = (event) => {
-    setChosenVal(event.target.value);
-  }
+  const {formData, setFormData} = useContext(AppContext);
 
   const randomise = () => {
     const randomNum = Math.floor(Math.random() * props.options.length + 1);
-    setChosenVal(props.options[randomNum]);
-    console.log(randomNum);
+    let randomVal = props.options[randomNum];
+    console.log(randomVal);
+    setFormData({...formData, race: randomVal});
+
+    return randomVal;
   }
 
   return (
     <>
-    <select value={chosenVal} onChange={handleChange}>
+    <select value={formData.race} onChange={(event) => 
+      setFormData({...formData, race: event.target.value})}>
       {props.options.map((op) => {
       return <option key={op}>{op}</option>})}
+
     </select>
 
     <button onClick={randomise}>Randomize</button>

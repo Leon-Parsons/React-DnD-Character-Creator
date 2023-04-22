@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { AppContext } from "../App";
 
 const CharName = () => {
 
-  const [chosenName, setChosenName] = useState("");
+  const {formData, setFormData} = useContext(AppContext);
 
   const firstName = ["Jorr", "Keela", "Jeroy", "Rishka", "Leer", "Kall", "Jenra", "Yan", "Kurk"];
   const lastName = ["Rorrison", "Gorrax", "Karlo", "Torak", "Raddok", "Yorra"];
@@ -10,19 +11,18 @@ const CharName = () => {
   const randomiseName = () => {
     const randomNum1 = Math.floor(Math.random() * firstName.length);
     const randomNum2 = Math.floor(Math.random() * lastName.length);
-    setChosenName(firstName[randomNum1] + " " + lastName[randomNum2]); 
-    console.log(chosenName)
+    setFormData({...formData, charName: firstName[randomNum1] + " " + lastName[randomNum2]}); 
+    {console.log(formData.charName)};
   }
 
-  const handleInputChange = (e) => {
-    setChosenName(e.target.value);
-    console.log(chosenName);
-  }
 
   return (
     <div className="name">
       <h4>Enter Name</h4>
-      <input value={chosenName} onChange={handleInputChange}></input>
+      <input value={formData.charName} onChange={(event) => 
+        setFormData({...formData, charName: event.target.value})
+      }
+      />
       <button onClick={randomiseName}>Randomise</button>
     </div>
   )
