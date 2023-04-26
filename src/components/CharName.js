@@ -1,9 +1,9 @@
 import React, {useState, useContext} from "react";
-import { AppContext } from "../App";
+import {CharContext } from "./Context";
 
 const CharName = () => {
 
-  const {formData, setFormData} = useContext(AppContext);
+  const {formData, setFormData} = useContext(CharContext);
 
   const firstName = ["Jorr", "Keela", "Jeroy", "Rishka", "Leer", "Kall", "Jenra", "Yan", "Kurk"];
   const lastName = ["Rorrison", "Gorrax", "Karlo", "Torak", "Raddok", "Yorra"];

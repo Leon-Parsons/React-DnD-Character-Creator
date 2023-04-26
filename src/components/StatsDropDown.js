@@ -1,9 +1,9 @@
 import React, {useState, useContext} from "react";
-import { AppContext } from "../App";
+import { CharContext } from "./Context";
 
 const StatsDropDown = (props) => {
 
-  const {formData, setFormData} = useContext(AppContext);
+  const {formData, setFormData} = useContext(CharContext);
 
   const handleChange = (event) => {
   };

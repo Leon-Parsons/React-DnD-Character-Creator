@@ -4,11 +4,11 @@ import CharOptions from "./CharOptions";
 import CharStats from "./CharStats";
 import CharConfirm from "./CharConfirm";
 import TitleText from "./TitleText";
-import { AppContext } from "../App";
+import { CharContext } from "./Context";
 
 const Form = () => {
 
-    const {formData} = useContext(AppContext);
+    const {formData} = useContext(CharContext);
 
     const [section, setSection] = useState(0);
 

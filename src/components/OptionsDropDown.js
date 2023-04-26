@@ -1,28 +1,30 @@
 import React, {useState, useContext} from "react";
-import { AppContext } from "../App";
+import { CharContext } from "./Context";
+
 
 const OptionsDropDown = (props) => {
   
-  //const displayRandBtn = 
-  const {formData, setFormData} = useContext(AppContext);
+  const {formData, setFormData} = useContext(CharContext);
 
-  const randomise = () => {
-    const randomNum = Math.floor(Math.random() * props.options.length + 1);
+
+  const handleChange = (event) => {
+    console.log(props.formVal);
+  };
+
+  const randomise =() => {
+    let randomNum = Math.floor(Math.random() * props.options.length + 1);
     let randomVal = props.options[randomNum];
-    console.log(randomVal);
-    setFormData({...formData, race: randomVal});
-
-    return randomVal;
+    console.log(props.formVal);
   }
 
   return (
     <>
-    <select value={formData.race} onChange={(event) => 
-      setFormData({...formData, race: event.target.value})}>
+    <h1>{props.formVal}</h1>
+    <select value={props.formVal} onChange={handleChange}>
       {props.options.map((op) => {
       return <option key={op}>{op}</option>})}
-
     </select>
+    
 
     <button onClick={randomise}>Randomize</button>
     </>
